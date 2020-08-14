@@ -43,7 +43,8 @@
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 100%;
-  height: 300px;
+  padding-top: 100%;
+
   margin-right: 50px;
   border-radius: 10px;
   background: #eee;
