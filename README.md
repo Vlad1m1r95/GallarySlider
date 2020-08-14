@@ -1,0 +1,2 @@
+# GallarySlider
+Created with CodeSandbox
