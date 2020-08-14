@@ -29,12 +29,12 @@
   */
 }
 .slides::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 1px;
+  height: 1px;
 }
 .slides::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 1px;
 }
 .slides::-webkit-scrollbar-track {
   background: transparent;
@@ -69,21 +69,23 @@
 
 .pagination {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
 .paginationControll {
-  /* width: calc(100% / 5 - 0.8px); */
-  width: 100%;
-  padding-top: calc(100% / 5 / 1.3);
-  /* height: 52px; */
+  /* width: calc(100% / 5 - 0.8px);
+  padding-top: calc(100% / 5 / 1.3); */
 
   border-radius: 4px;
   border: none;
   margin-left: 4px;
   margin-right: 4px;
   position: relative;
+
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: calc(100% / 5 - 0.8px);
+  padding-top: calc(100% / 5 / 1.3);
 }
 
 .paginationButton:first-of-type {

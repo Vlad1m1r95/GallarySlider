@@ -48,7 +48,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="pagination">
+      <div className="pagination slides">
         {arr.map((image, index) => (
           <>
             {index === 0 && (
