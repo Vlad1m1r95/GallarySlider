@@ -1,8 +1,9 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import "./styles.css";
 
 export default function App() {
   const arr = [
+    "https://minsknews.by/wp-content/uploads/2020/01/pug_3.jpg",
     "https://kisapes.ru/images/breeds/dogs/mops.jpg",
     "https://www.tapeciarnia.pl/tapety/normalne/tapeta-mops-w-trawie.jpg",
     "https://superminiki.com/files/mops_0.jpg",
@@ -20,15 +21,21 @@ export default function App() {
     setSlidesPagination(() => [...slidesPaginationContainer.current.children]);
   }, [slidesContainer, slidesPaginationContainer]);
 
-  const scrollTo = (index) => {
-    slides[index].scrollIntoView({ behavior: "smooth" });
-    setCurrentIndex(index);
-  };
+  const scrollTo = useCallback(
+    (index) => {
+      slides[index].scrollIntoView({ behavior: "smooth" });
+      setCurrentIndex(index);
+    },
+    [slides]
+  );
 
+  // alert(currentIndex);
   const slideBack = () => {
     if (currentIndex > 0) {
       slides[currentIndex - 1].scrollIntoView({ behavior: "smooth" });
+
       slidesPagination[currentIndex - 1].scrollIntoView({ behavior: "smooth" });
+
       setCurrentIndex(() => currentIndex - 1);
     }
   };
@@ -39,6 +46,11 @@ export default function App() {
       slidesPagination[currentIndex + 1].scrollIntoView({ behavior: "smooth" });
       setCurrentIndex(() => currentIndex + 1);
     }
+    // if (currentIndex === 0) {
+    //   slidesPagination[4].scrollIntoView({ behavior: "smooth" });
+    //   slides[4].scrollIntoView({ behavior: "smooth" });
+    //   setCurrentIndex(4);
+    // }
   };
 
   return (
@@ -49,6 +61,15 @@ export default function App() {
             <div className="slide">
               <img className="image" src={image} alt={"мопс"} />
             </div>
+          ))}
+        </div>
+
+        <div className="PaginationMobile">
+          {arr.map((_, index) => (
+            <button
+              className="paginationMobileControl"
+              onClick={scrollTo.bind(this, index)}
+            ></button>
           ))}
         </div>
       </div>
