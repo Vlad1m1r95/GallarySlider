@@ -16,6 +16,7 @@
 
 .slides {
   display: flex;
+  width: 100%;
 
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -70,6 +71,7 @@
 .pagination {
   margin-top: 20px;
   width: 100%;
+  display: flex;
 }
 
 .paginationControll {
