@@ -5,18 +5,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 540px;
+  max-width: 464px;
   margin: 0 auto;
   position: relative;
 }
-.slider {
+.Gallary__slider {
   width: 100%;
   text-align: center;
   overflow: hidden;
   position: relative;
 }
 
-.slides {
+.Gallary__slides {
   display: flex;
   width: 100%;
 
@@ -31,18 +31,18 @@
   scroll-snap-type: mandatory;
   */
 }
-.slides::-webkit-scrollbar {
+.Gallary__slides::-webkit-scrollbar {
   width: 1px;
   height: 1px;
 }
-.slides::-webkit-scrollbar-thumb {
+.Gallary__slides::-webkit-scrollbar-thumb {
   background: #fff;
   border-radius: 1px;
 }
-.slides::-webkit-scrollbar-track {
+.Gallary__slides::-webkit-scrollbar-track {
   background: transparent;
 }
-.slide {
+.Gallary__slide {
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 100%;
@@ -59,24 +59,25 @@
   justify-content: center;
   align-items: center;
 }
-.slide:target {
+.Gallary__slide:target {
   /*   transform: scale(0.8); */
+  /* border: solid #eee 2px; */
 }
 
 /* Don't need button navigation */
 @supports (scroll-snap-type) {
-  .slider > a {
+  .Gallary__slider > a {
     display: none;
   }
 }
 
-.pagination {
+.Gallary__pagination {
   margin-top: 20px;
   width: 100%;
   display: flex;
 }
 
-.paginationControll {
+.Gallary__paginationControll {
   /* width: calc(100% / 5 - 0.8px);
   padding-top: calc(100% / 5 / 1.3); */
 
@@ -92,15 +93,15 @@
   padding-top: calc(100% / 4 / 1.3);
 }
 
-.paginationButton:first-of-type {
+.Gallary__paginationButton:first-of-type {
   margin-right: 12px;
 }
 
-.paginationButton:last-of-type {
+.Gallary__paginationButton:last-of-type {
   margin-left: 12px;
 }
 
-.image {
+.Gallary__image {
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -109,15 +110,15 @@
   height: 100%;
 }
 
-.PaginationMobile {
+.Gallary__paginationMobile {
   display: none;
 }
 
 @media (max-width: 380px) {
-  .pagination {
+  .Gallary__pagination {
     display: none;
   }
-  .PaginationMobile {
+  .Gallary__paginationMobile {
     position: absolute;
     bottom: 16px;
     display: flex;
@@ -125,7 +126,7 @@
     transform: translateX(-50%);
   }
 
-  .paginationMobileControl {
+  .Gallary__paginationMobileControl {
     width: 12px;
     height: 12px;
     border: none;
