@@ -51,7 +51,12 @@ export default function App() {
                 className="Gallary__paginationControll"
                 onClick={scrollTo.bind(this, index)}
               >
-                <img className="Gallary__image" src={image} alt={"мопс"} />
+                <img
+                  className="[ Gallary__image ] 
+                  [ Gallary__imagePagination  ]"
+                  src={image}
+                  alt={"мопс"}
+                />
               </button>
             </>
           ))}

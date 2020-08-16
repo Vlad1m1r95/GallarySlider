@@ -108,6 +108,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 4px;
 }
 
 .Gallary__paginationMobile {
@@ -134,4 +135,13 @@
     margin-right: 4px;
     border-radius: 50%;
   }
+}
+
+.Gallary__imagePagination {
+  opacity: 0.4;
+}
+
+.Gallary__imagePagination_active {
+  border: 2px solid #2f80ed;
+  opacity: 1 !important;
 }
